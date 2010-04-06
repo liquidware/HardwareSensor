@@ -5,7 +5,7 @@ HardwareSensor is a library for sensor communication via packets. This library i
 packaged into the Antipasto Arduino IDE binary releases for Windows, Mac, and Linux.
 It can be downloaded here:
 
-* [http://www.illuminatolabs.com/IlluminatoDownloads.htm]
+* [http://www.illuminatolabs.com/IlluminatoDownloads.htm][0]
 
 This library works for the following boards:
 
@@ -57,3 +57,6 @@ More Information
 ================
 
 For more information, visit the [Antipasto Hardware Blog](http://antipastohw.blogspot.com/)
+
+[0]: http://www.illuminatolabs.com/IlluminatoDownloads.htm "Antipasto Arduino IDE"
+
