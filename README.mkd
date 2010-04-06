@@ -1,0 +1,56 @@
+HardwareSensor
+==============
+
+HardwareSensor is a library for sensor communication via packets. This library is
+packaged into the Antipasto Arduino IDE binary releases.
+
+This library works for the following boards:
+
+* [TouchShield Slide](http://www.liquidware.com/shop/show/TSL/TouchShield+Slide)
+* [TouchShield Stealth](http://www.liquidware.com/shop/show/TS/TouchShield+Stealth)
+* [Arduino Duemilanove](http://www.liquidware.com/shop/show/ARD/Arduino+Duemilanove)
+* [Arduino Mega](http://www.liquidware.com/shop/show/AMEGA/Arduino+Mega)
+* [Arduino Diecimila](http://www.liquidware.com/shop/show/ARD/Arduino+Duemilanove)
+
+The typical usage case is to program the Arduino Sketch first, then program the
+TouchShield Sketch by changing your board through the Tools->Boards menu in
+the Antipasto Arduino IDE.
+
+Arduino Example Sketch
+======================
+
+This guy is broadcasting sensor values onto the serial pins.
+
+        void setup() {
+            Sensor.begin(19200);
+        }
+
+        void loop() {
+            int value = analogRead(5);
+            Sensor.print("accel", value);
+        }
+
+TouchShield Example Sketch
+==========================
+
+This guy is reading sensor packets from the serial pins.
+
+        void setup() {
+            Sensor.begin(19200);
+            background(0);
+        }
+
+        void loop() {
+            if (Sensor.available()) {
+                int value;
+
+                value = Sensor.read();  //get the sensor value
+                text(value, 50, 10);             // print the value to the screen
+                text(Sensor.getName(), 10, 10);  // print the name to the screen
+            }
+        }
+
+More Information
+================
+
+For more information, visit the [Antipasto Hardware Blog](http://antipastohw.blogspot.com/)
