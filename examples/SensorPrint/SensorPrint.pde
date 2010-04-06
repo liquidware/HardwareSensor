@@ -13,6 +13,8 @@
  *      3.) Print the sensor to the TouchShield
  */
 
+#include <HardwareSensor.h>
+
 void setup() {
     Sensor.begin(19200);
 }

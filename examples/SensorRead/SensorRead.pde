@@ -13,6 +13,8 @@
  *      4.) Display the sensor on screen
  */
 
+#include <HardwareSensor.h>
+
 void setup() {
     Sensor.begin(19200);
     background(0);
