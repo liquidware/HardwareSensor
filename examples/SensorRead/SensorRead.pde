@@ -17,7 +17,9 @@
 
 void setup() {
     Sensor.begin(19200);
-    background(0);
+                                                                                                       #if (defined(_TOUCH_SLIDE_) || defined(_TOUCH_STEALTH_))
+    background(0);                                                                                     //valid only when board is touchshield
+                                                                                                       #endif
 }
 
 void loop() {
@@ -25,7 +27,9 @@ void loop() {
         int value;
 
         value = Sensor.read();  //get the sensor value
-        text(value, 50, 10);             // print the value to the screen
-        text(Sensor.getName(), 10, 10);  // print the name to the screen
+                                                                                                       #if (defined(_TOUCH_SLIDE_) || defined(_TOUCH_STEALTH_))
+        text(value, 50, 10);             // print the value to the screen                              //valid only when board is touchshield
+        text(Sensor.getName(), 10, 10);  // print the name to the screen                               //valid only when board is touchshield
+                                                                                                       #endif
     }
 }
